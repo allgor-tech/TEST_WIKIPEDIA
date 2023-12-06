@@ -1,0 +1,24 @@
+{
+  "name": "test",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+ "scripts": {
+  "test": "playwright test",
+  "exec": "docker start your_name3 && docker exec -it your_name3 npx playwright test",
+  "report": "docker cp your_name3:/app/playwright-report .",
+  "docker": "npm run exec; npm run report",
+  "build": "docker build -t playwright-tests .",
+  "name": "docker run -d --name your_name3 -it playwright-tests"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "@playwright/test": "^1.40.1",
+    "@types/node": "^20.10.3"
+  },
+  "dependencies": {
+    "dotenv": "^16.3.1"
+  }
+}
