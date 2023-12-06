@@ -20,7 +20,6 @@ COPY playwright.config.ts /app/
 COPY state.json /app/
 COPY global-setup.ts /app/
 COPY .env /app/
-COPY playwright-report/ /app/playwright-report/
 COPY pageElements/ /app/pageElements/
 
 # Set the entry point for the container

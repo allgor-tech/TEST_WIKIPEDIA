@@ -5,11 +5,12 @@
   "main": "index.js",
  "scripts": {
   "test": "playwright test",
-  "exec": "docker start your_name3 && docker exec -it your_name3 npx playwright test",
-  "report": "docker cp your_name3:/app/playwright-report .",
-  "docker": "npm run exec; npm run report",
+  "start": "docker start wikipedia",
+  "exec": "docker exec -it wikipedia npx playwright test",
+  "report": "docker cp wikipedia:/app/playwright-report .",
   "build": "docker build -t playwright-tests .",
-  "name": "docker run -d --name your_name3 -it playwright-tests"
+  "name": "docker run -d --name wikipedia -it playwright-tests",
+  "wikipedia_test_docker": "npm run build; npm run name; npm run start; npm run exec; npm run report"
   },
   "keywords": [],
   "author": "",
