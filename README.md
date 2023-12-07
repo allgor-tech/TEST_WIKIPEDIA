@@ -1,4 +1,4 @@
-Hi, this is a little Playwright autotest with Docker to check language change in Wikipedia.
+Hi, this is a little Playwright autotest with Docker to check language change on Wikipedia.
 
 # Test Case: Wikipedia Language Change
 
@@ -39,22 +39,22 @@ Verify that users can successfully change their language preference on Wikipedia
 
 
 
-##### STEPS TO RUN THIS TEST WITH DOCKER #####
+## STEPS TO RUN THIS TEST WITH DOCKER
 
 1. Install Playwright with - npm init playwright@latest
-(during the installation process, please update your browsers and do not change the configuration file)
+(during the installation process, please update your browsers and do not change the configuration file).
 
-2. Specify Credentials for Wikipedia in .env file
+2. Specify Credentials for Wikipedia in .env file.
 
-3. Run "npm run wikipedia_test_docker" to run everything
+3. Run "npm run wikipedia_test_docker" to run everything.
     This command contains:
-    - "docker build -t playwright-tests ." to create an image
-    - "docker run -d --name wikipedia -it playwright-tests" to create a container
-    - "docker start wikipedia" to start container
-    - "docker exec -it wikipedia npx playwright test" to execute test
-    - "docker cp wikipedia:/app/playwright-report ." to get a report from Docker to local machine
-    You can run these commands separately
+    - "docker build -t playwright-tests ." to create an image.
+    - "docker run -d --name wikipedia -it playwright-tests" to create a container.
+    - "docker start wikipedia" to start container.
+    - "docker exec -it wikipedia npx playwright test" to execute test.
+    - "docker cp wikipedia:/app/playwright-report ." to get a report from Docker to local machine.
+    You can run these commands separately.
     Container name must be unique because of "npm run report" command so it better to delete a container and an image manually or use "docker system prune".
-    All these commands you will find in package.json
+    All these commands you will find in package.json.
 
 4. Have Fun!
